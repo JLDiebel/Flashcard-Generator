@@ -1,0 +1,43 @@
+var inquirer = require("inquirer")
+var question = require('./questions.json');
+
+function Popquiz() {
+  this.question = question;
+}
+
+Popquiz.prototype.printInfo = function() {
+    console.log("Question: " + this.question);
+    console.log("------------");
+}
+
+var count = 0;
+
+var questionArray = [];
+
+​
+var askQuestion = function() {
+ 
+  if (count < 5) {
+    inquirer.prompt([
+      {
+        message: question[count].front
+      }
+
+    ]).then(function(answers) {
+      if (answers = question[].back){
+        console.log("You're correct! Radical!")
+      }else {
+        console.log("Negatory, Ghostrider.")
+      };
+      count++;
+      askQuestion();
+    });
+    // else statement which runs a for loop that will execute .printInfo() for each object inside of our array
+  }
+  else {
+    for (var x = 0; x < 5; x++) {
+      questionArray[x].printInfo();
+    }
+  }
+};
+askQuestion(); 
