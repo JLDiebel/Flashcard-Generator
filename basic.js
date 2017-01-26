@@ -12,12 +12,13 @@ var askQuestion = function() {
     inquirer.prompt([
       {
         type: "input",
-        message: array[0].front,
-        name: "answer"
+        message: fs.questions[0].front,
+        name: "que"
       }
 
     ]).then(function(answers) {
-      if (answers = question[count].back){
+
+      if (answers = question[0].back){
         console.log("You're correct! Radical!")
         score++;
       }else {
@@ -26,7 +27,7 @@ var askQuestion = function() {
       count++;
       askQuestion();
     });
-    // else statement which runs a for loop that will execute .printInfo() for each object inside of our array
+  
   }
   else {
     for (var x = 0; x < 5; x++) {
