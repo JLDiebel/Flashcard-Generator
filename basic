@@ -1,17 +1,8 @@
-var inquirer = require("inquirer")
+var inquirer = require("inquirer");
 var question = require('./questions.json');
-
-function Popquiz() {
-  this.question = question;
-}
-
-Popquiz.prototype.printInfo = function() {
-    console.log("Question: " + this.question);
-    console.log("------------");
-}
-
+var fs = require("./questions.js");
 var count = 0;
-
+var score = 0;
 var questionArray = [];
 
 ​
@@ -20,12 +11,15 @@ var askQuestion = function() {
   if (count < 5) {
     inquirer.prompt([
       {
-        message: question[count].front
+        type: "input",
+        message: array[0].front,
+        name: "answer"
       }
 
     ]).then(function(answers) {
-      if (answers = question[].back){
+      if (answers = question[count].back){
         console.log("You're correct! Radical!")
+        score++;
       }else {
         console.log("Negatory, Ghostrider.")
       };
