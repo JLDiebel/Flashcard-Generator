@@ -1,38 +1,45 @@
 var inquirer = require("inquirer");
-var question = require('./questions.json');
-var fs = require("./questions.js");
+var Qpull = require("./questions.js");
 var count = 0;
 var score = 0;
-var questionArray = [];
 
-​
 var askQuestion = function() {
- 
-  if (count < 5) {
-    inquirer.prompt([
-      {
-        type: "input",
-        message: fs.questions[0].front,
-        name: "que"
-      }
 
-    ]).then(function(answers) {
+     if (count < 10) {
+        inquirer.prompt([{
+                type: "input",
+                message: Qpull[count].front,
+                name: "question"
+            }
 
-      if (answers = question[0].back){
-        console.log("You're correct! Radical!")
-        score++;
-      }else {
-        console.log("Negatory, Ghostrider.")
-      };
-      count++;
-      askQuestion();
-    });
-  
-  }
-  else {
-    for (var x = 0; x < 5; x++) {
-      questionArray[x].printInfo();
-    }
-  }
+        ]).then(function(answers) {
+          
+           
+            if (answers.question === Qpull[count].back) {
+                console.log("You're correct! Great job!")
+                score++;
+                console.log(score);
+            } else {
+                console.log("Negatory, Ghostrider.")
+            };
+           
+            count++;
+
+            askQuestion();
+        });
+
+    } 
+    
 };
-askQuestion(); 
+askQuestion();
+
+// var something = function(){
+//     inquirer.prompt([{
+//         name: "name",
+//         message: Qpull[0].front, 
+//     }]).then(function(answers){
+//         console.log(answers);
+//     });
+// }
+
+// something();

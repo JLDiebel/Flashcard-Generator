@@ -1,0 +1,22 @@
+{
+  "name": "josh",
+  "version": "1.0.0",
+  "description": "",
+  "main": "basic.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JLDiebel/Flashcard-Generator.git"
+  },
+  "author": "josh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JLDiebel/Flashcard-Generator/issues"
+  },
+  "homepage": "https://github.com/JLDiebel/Flashcard-Generator#readme",
+  "dependencies": {
+    "inquirer": "^3.0.1"
+  }
+}
