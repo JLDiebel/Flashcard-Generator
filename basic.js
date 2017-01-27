@@ -18,7 +18,7 @@ var askQuestion = function() {
             if (answers.question === Qpull[count].back) {
                 console.log("You're correct! Great job!")
                 score++;
-                console.log(score);
+                console.log("score: " + score);
             } else {
                 console.log("Negatory, Ghostrider.")
             };
@@ -32,14 +32,4 @@ var askQuestion = function() {
     
 };
 askQuestion();
-
-// var something = function(){
-//     inquirer.prompt([{
-//         name: "name",
-//         message: Qpull[0].front, 
-//     }]).then(function(answers){
-//         console.log(answers);
-//     });
-// }
-
-// something();
+    
